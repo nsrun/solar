@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>SolarTech - Clean Solar Energy Solutions</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+<style>
+  /* Reset and Base Styles */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0f67b1; /* uniform background color */
+    min-height: 100vh;
+    color: white; /* default text color */
+  }
+
+  /* Navbar */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background: rgba(255, 255, 255, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  .logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+  }
+  .navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  .navbar ul li a:hover {
+    color: #ffd700;
+  }
+
+  /* Hero Section */
+  .hero {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+  }
+  .hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .hero-content {
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    border-radius: 16px;
+    padding: 40px;
+    max-width: 500px;
+    text-align: center;
+    color: #003366;
+  }
+  .hero-content h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #0f67b1;
+  }
+  .hero-content p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    color: #003366;
+  }
+  button {
+    padding: 15px 40px;
+    border: none;
+    background: linear-gradient(135deg, #0f67b1, #1e88e5);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(15, 103, 177, 0.4);
+  }
+
+  /* Features Section */
+  .features {
+    padding: 80px 40px;
+    background-color: #0f67b1;
+    color: white;
+  }
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .feature-card {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(20px);
+    border-radius: 16px;
+    padding: 40px;
+    text-align: center;
+    color: #003366;
+    transition: transform 0.3s;
+  }
+  .feature-card:hover {
+    transform: translateY(-10px);
+  }
+  .feature-card i {
+    font-size: 3em;
+    color: #0f67b1;
+    margin-bottom: 20px;
+  }
+  .feature-card h3 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+  }
+  .feature-card p {
+    font-size: 1.1em;
+    opacity: 0.9;
+  }
+
+  /* Products Section */
+  .products {
+    padding: 80px 40px;
+    background-color: #0f67b1;
+    color: white;
+  }
+  .products h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 50px;
+  }
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .product-card {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    color: #003366;
+  }
+  .product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  }
+  .product-image {
+    width: 100%;
+    height: 200px;
+    background: #abc4ff;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+  .product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .product-card h3 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+  }
+  .product-card p {
+    font-size: 1.2em;
+  }
+
+  /* Why Choose Us Section */
+  .why-choose {
+    padding: 80px 40px;
+    background-color: #0f67b1;
+    color: white;
+  }
+  .why-choose h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 50px;
+  }
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .benefit-card {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 30px;
+    text-align: center;
+    color: #003366;
+  }
+  .benefit-card h3 {
+    font-size: 1.6em;
+    margin-bottom: 15px;
+    color: #0f67b1;
+  }
+
+  /* Installation Steps */
+  .installation-steps {
+    padding: 80px 40px;
+    background-color: #0f67b1;
+    color: white;
+  }
+  .installation-steps h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 50px;
+  }
+  .installation-steps h2 span {
+    color: #1e88e5;
+  }
+  .timeline {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .step {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    transition: transform 0.3s, background 0.3s;
+  }
+  .step:hover {
+    transform: translateX(10px);
+    background: rgba(255,255,255,0.4);
+  }
+  .step .icon {
+    width: 50px;
+    height: 50px;
+    background: #0f67b1;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    flex-shrink: 0;
+  }
+  .step-content {
+    flex: 1;
+  }
+  .step h3 {
+    font-size: 1.3em;
+    margin-bottom: 5px;
+  }
+  .step p {
+    font-size: 1.1em;
+  }
+
+  /* Footer */
+  footer {
+    background: #0f67b1;
+    padding: 40px 20px 20px;
+    color: white;
+    margin-top: 60px;
+  }
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 30px;
+  }
+  .footer-section h3 {
+    margin-bottom: 20px;
+    color: #ffd700;
+    font-size: 20px;
+  }
+  .footer-section p,
+  .footer-section a {
+    color: rgba(255,255,255,0.8);
+    line-height: 2;
+    text-decoration: none;
+    display: block;
+    transition: color 0.3s;
+  }
+  .footer-section a:hover {
+    color: #ffd700;
+  }
+  .social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+  }
+  .social-links a {
+    width: 40px;
+    height: 40px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+  }
+  .social-links a:hover {
+    background: #ffd700;
+    transform: translateY(-3px);
+  }
+  .footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    color: rgba(255,255,255,0.7);
+  }
+
+  /* Animations */
+  @keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Responsive */
+  @media(max-width:768px) {
+    .navbar { padding: 15px 20px; }
+    .navbar ul { gap: 15px; }
+    .about-hero h1 { font-size: 2.5em; }
+    .about-hero p { font-size: 1.1em; }
+    .mission-vision { grid-template-columns: 1fr; }
+    .values-grid, .team-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<nav class="navbar">
+  <h2 class="logo">SolarTech</h2>
+  <ul>
+    <li><a href="home.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html" class="active">Services</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="calculator.html">Calculator</a></li>
+  </ul>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero" id="home">
+  <img class="hero-image" src="https://media.istockphoto.com/id/1337173750/photo/solar-and-wind-power.jpg?b=1&s=1024x1024&w=0&k=20&c=J_-HhqCUt6pMj7jXA64zgpblT9YMcn1Rwy-Jr2J3oIM=" alt="Solar Panels" />
+  <div class="hero-content">
+    <h1>Power Your Home with Solar Energy</h1>
+    <p>Clean, Affordable & Sustainable Solar Panel Installation</p>
+    <button onclick="showAlert()">Get Free Quote</button>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section class="features" id="services">
+  <div class="features-grid">
+    <div class="feature-card">
+      <i class="fa-solid fa-sun"></i>
+      <h3>Clean Energy</h3>
+      <p>Eco-friendly and renewable power for a sustainable future</p>
+    </div>
+    <div class="feature-card">
+      <i class="fa-solid fa-indian-rupee-sign"></i>
+      <h3>Cost Savings</h3>
+      <p>Significantly reduce your electricity bills</p>
+    </div>
+    <div class="feature-card">
+      <i class="fa-solid fa-house"></i>
+      <h3>Easy Installation</h3>
+      <p>Fast, reliable, and professional setup</p>
+    </div>
+  </div>
+</section>
+
+<!-- Products Section -->
+<section class="products">
+  <h2>Our Solar Panel Systems</h2>
+  <div class="product-grid">
+    <div class="product-card">
+      <div class="product-image">
+        <img src="https://www.emzopowertech.com/assets/img/product/img-2.jpg" alt="10kW Solar Panel" />
+      </div>
+      <h3>Solar Panel</h3>
+      <p>10kW System</p>
+    </div>
+    <div class="product-card">
+      <div class="product-image">
+        <img src="https://www.emzopowertech.com/assets/img/product/img-2.jpg" alt="20kW Solar Panel" />
+      </div>
+      <h3>Solar Panel</h3>
+      <p>20kW System</p>
+    </div>
+    <div class="product-card">
+      <div class="product-image">
+        <img src="https://www.emzopowertech.com/assets/img/product/img-2.jpg" alt="30kW Solar Panel" />
+      </div>
+      <h3>Solar Panel</h3>
+      <p>30kW System</p>
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Us -->
+<section class="why-choose" id="about">
+  <h2>Why Choose SolarTech?</h2>
+  <div class="benefits-grid">
+    <div class="benefit-card">
+      <h3>High Efficiency</h3>
+      <p>Top-quality panels with maximum energy output for optimal performance</p>
+    </div>
+    <div class="benefit-card">
+      <h3>Expert Team</h3>
+      <p>Certified installers with years of experience in solar technology</p>
+    </div>
+    <div class="benefit-card">
+      <h3>Affordable Pricing</h3>
+      <p>Best ROI with flexible pricing plans tailored to your needs</p>
+    </div>
+  </div>
+</section>
+
+<!-- Installation Steps -->
+<section class="installation-steps">
+  <h2>The Steps for <span>Solar Panel Installation</span></h2>
+  <div class="timeline">
+    <div class="step">
+      <div class="icon"><i class="fas fa-tools"></i></div>
+      <div class="step-content">
+        <h3>Step 1</h3>
+        <p>Set Up Scaffolding</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="icon"><i class="fas fa-solar-panel"></i></div>
+      <div class="step-content">
+        <h3>Step 2</h3>
+        <p>Install Solar Panel Mounts</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="icon"><i class="fas fa-sun"></i></div>
+      <div class="step-content">
+        <h3>Step 3</h3>
+        <p>Install the Solar Panels</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="icon"><i class="fas fa-plug"></i></div>
+      <div class="step-content">
+        <h3>Step 4</h3>
+        <p>Wire the Solar Panels</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="icon"><i class="fas fa-microchip"></i></div>
+      <div class="step-content">
+        <h3>Step 5</h3>
+        <p>Install the Solar Inverter</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="icon"><i class="fas fa-battery-full"></i></div>
+      <div class="step-content">
+        <h3>Step 6</h3>
+        <p>Bond Solar Inverter & Battery</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="icon"><i class="fas fa-bolt"></i></div>
+      <div class="step-content">
+        <h3>Step 7</h3>
+        <p>Connect Inverter to Consumer Unit</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="icon"><i class="fas fa-check-circle"></i></div>
+      <div class="step-content">
+        <h3>Step 8</h3>
+        <p>Start & Test Solar Panels</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>About SolarTech</h3>
+      <p>Leading provider of solar energy solutions, dedicated to making renewable energy accessible and affordable for everyone.</p>
+      <div class="social-links">
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
+    </div>
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <a href="#">Home</a>
+      <a href="#">About Us</a>
+      <a href="#">Services</a>
+      <a href="#">Portfolio</a>
+      <a href="#">Blog</a>
+    </div>
+    <div class="footer-section">
+      <h3>Services</h3>
+      <a href="#">Residential Solar</a>
+      <a href="#">Commercial Solar</a>
+      <a href="#">Solar Maintenance</a>
+      <a href="#">Energy Storage</a>
+      <a href="#">Consultation</a>
+    </div>
+    <div class="footer-section">
+      <h3>Contact Info</h3>
+      <p><i class="fa-solid fa-location-dot"></i> 123 Solar St, Sun City, CA</p>
+      <p><i class="fa-solid fa-phone"></i> +91 98765 43210</p>
+      <p><i class="fa-solid fa-envelope"></i> info@solartech.com</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2024 SolarTech. All rights reserved. | Privacy Policy | Terms of Service</p>
+  </div>
+</footer>
+
+<script>
+  function showAlert() {
+    alert("Thank you for your interest! Our team will contact you soon.");
+  }
+</script>
+</body>
+</html>
