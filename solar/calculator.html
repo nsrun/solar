@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Solar Calculator | SolarTech</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <h2 class="logo">SolarTech</h2>
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="calculator.html" class="active">Calculator</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="contact-hero" data-aos="zoom-in">
+    <h1>Solar Savings Calculator</h1>
+    <p>Estimate your potential savings and see how much you can contribute to a greener planet by switching to solar
+      energy.</p>
+  </section>
+
+  <!-- Calculator & Contact Container -->
+  <section class="contact-container">
+    <!-- Info -->
+    <div class="contact-info" data-aos="fade-right">
+      <h1>Why Calculate?</h1>
+      <p>Understanding your energy consumption is the first step toward independence. Our tools help you visualize the
+        long-term benefits of solar.</p>
+
+      <div class="info-item">
+        <i class="fa-solid fa-bolt"></i>
+        <p>Reduce Monthly Bills</p>
+      </div>
+
+      <div class="info-item">
+        <i class="fa-solid fa-leaf"></i>
+        <p>Lower Carbon Footprint</p>
+      </div>
+
+      <div class="info-item">
+        <i class="fa-solid fa-chart-line"></i>
+        <p>High Return on Investment</p>
+      </div>
+
+      <div class="info-item">
+        <i class="fa-solid fa-house-circle-check"></i>
+        <p>Increase Property Value</p>
+      </div>
+    </div>
+
+    <!-- Placeholder Form (Acting as Calculator Contact) -->
+    <div class="contact-form" data-aos="fade-left">
+      <h2>Get Detailed Analysis</h2>
+      <form>
+        <div class="form-group">
+          <label>Monthly bill (approx)</label>
+          <input type="number" placeholder="Enter amount in $" required>
+        </div>
+
+        <div class="form-group">
+          <label>Roof Area (sq ft)</label>
+          <input type="number" placeholder="Enter area" required>
+        </div>
+
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="john@example.com" required>
+        </div>
+
+        <button type="submit"><i class="fa-solid fa-calculator"></i> Calculate Savings</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>About SolarTech</h3>
+        <p>Leading provider of solar energy solutions, dedicated to making renewable energy accessible and affordable
+          for everyone.</p>
+        <div class="social-links">
+          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <a href="home.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+        <a href="calculator.html">Calculator</a>
+      </div>
+      <div class="footer-section">
+        <h3>Services</h3>
+        <a href="#">Residential Solar</a>
+        <a href="#">Commercial Solar</a>
+        <a href="#">Solar Maintenance</a>
+        <a href="#">Energy Storage</a>
+        <a href="#">Consultation</a>
+      </div>
+      <div class="footer-section">
+        <h3>Contact Info</h3>
+        <p><i class="fa-solid fa-location-dot"></i> 123 Solar St, Sun City, CA</p>
+        <p><i class="fa-solid fa-phone"></i> +91 98765 43210</p>
+        <p><i class="fa-solid fa-envelope"></i> info@solartech.com</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 SolarTech. All rights reserved. | Privacy Policy | Terms of Service</p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
