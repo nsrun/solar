@@ -1,4 +1,4 @@
-### Solar
+#### Solar
 
 ## Overview
 Solar is an innovative project dedicated to harnessing and optimizing solar energy. The goal is to develop a system that efficiently monitors, controls, and analyzes solar power generation to promote sustainable and renewable energy solutions.
